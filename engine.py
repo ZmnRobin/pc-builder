@@ -304,9 +304,194 @@ class PCBuilderEngine:
 
     def build_office_pc(self, requirements: BuildRequirements) -> Dict:
         """Build an office/productivity PC"""
-        # Similar logic but prioritize CPU, RAM, and integrated graphics
-        # Implementation would follow similar pattern but with different priorities
-        pass
+        budget = requirements.budget
+        allocation = self.budget_allocation[requirements.purpose]
+        
+        build = {}
+        remaining_budget = budget
+        build_requirements = {}
+        
+        # Step 1: Choose CPU (most important for office work)
+        cpu_budget = int(budget * allocation["CPU"])
+        cpu = self.find_best_component("CPU", cpu_budget)
+        
+        if not cpu:
+            return {"error": "No suitable CPU found within budget"}
+        
+        build["CPU"] = cpu
+        remaining_budget -= cpu["price_BDT"]
+        
+        # Extract CPU socket for motherboard compatibility
+        cpu_socket = cpu.get("specs", {}).get("socket")
+        if cpu_socket:
+            build_requirements["socket"] = cpu_socket
+        
+        # Step 2: Choose Motherboard (compatible with CPU)
+        mb_budget = int(budget * allocation["Motherboard"])
+        motherboard = self.find_best_component("Motherboard", 
+                                             min(mb_budget, remaining_budget), 
+                                             build_requirements)
+        if not motherboard:
+            return {"error": "No compatible motherboard found"}
+        
+        build["Motherboard"] = motherboard
+        remaining_budget -= motherboard["price_BDT"]
+        
+        # Step 3: Choose RAM (important for multitasking)
+        ram_budget = int(budget * allocation["RAM"])
+        ram_type = self.get_ram_type_for_socket(cpu_socket)
+        build_requirements["ram_type"] = ram_type
+        
+        ram = self.find_best_component("RAM", 
+                                     min(ram_budget, remaining_budget),
+                                     build_requirements)
+        if not ram:
+            return {"error": "No suitable RAM found"}
+        
+        build["RAM"] = ram
+        remaining_budget -= ram["price_BDT"]
+        
+        # Step 4: Choose Storage (SSD preferred for office work)
+        storage_budget = int(budget * allocation["Storage"])
+        storage = self.find_best_component("Storage", 
+                                         min(storage_budget, remaining_budget))
+        if storage:
+            build["Storage"] = storage
+            remaining_budget -= storage["price_BDT"]
+        
+        # Step 5: Choose PSU (lower wattage needed for office PCs)
+        psu_budget = int(budget * allocation["PSU"])
+        psu = self.find_best_component("PSU", 
+                                     min(psu_budget, remaining_budget),
+                                     {"min_wattage": 400})  # Lower requirement for office
+        if psu:
+            build["PSU"] = psu
+            remaining_budget -= psu["price_BDT"]
+        
+        # Step 6: Choose Case (budget-friendly)
+        case_budget = remaining_budget
+        case = self.find_best_component("Case", case_budget)
+        if case:
+            build["Case"] = case
+            remaining_budget -= case["price_BDT"]
+        
+        # Calculate totals and performance
+        total_price = sum(comp["price_BDT"] for comp in build.values() if isinstance(comp, dict))
+        avg_performance = sum(comp.get("performance_score", 50) for comp in build.values() if isinstance(comp, dict)) / len(build)
+        
+        return {
+            "build": build,
+            "total_price": total_price,
+            "budget": budget,
+            "remaining_budget": remaining_budget,
+            "avg_performance_score": round(avg_performance, 1),
+            "build_purpose": requirements.purpose.value,
+            "compatibility_checked": True,
+            "bottleneck_analysis": self.analyze_bottlenecks(build)
+        }
+
+    def build_content_creation_pc(self, requirements: BuildRequirements) -> Dict:
+        """Build a content creation PC (video editing, streaming, 3D work)"""
+        budget = requirements.budget
+        allocation = self.budget_allocation[requirements.purpose]
+        
+        build = {}
+        remaining_budget = budget
+        build_requirements = {}
+        
+        # Step 1: Choose CPU (very important for content creation)
+        cpu_budget = int(budget * allocation["CPU"])
+        cpu = self.find_best_component("CPU", cpu_budget)
+        
+        if not cpu:
+            return {"error": "No suitable CPU found within budget"}
+        
+        build["CPU"] = cpu
+        remaining_budget -= cpu["price_BDT"]
+        
+        # Extract CPU socket for motherboard compatibility
+        cpu_socket = cpu.get("specs", {}).get("socket")
+        if cpu_socket:
+            build_requirements["socket"] = cpu_socket
+        
+        # Step 2: Choose GPU (important for rendering and streaming)
+        gpu_budget = int(budget * allocation["GPU"])
+        gpu = self.find_best_component("GPU", min(gpu_budget, remaining_budget))
+        
+        if not gpu:
+            return {"error": "No suitable GPU found within budget"}
+        
+        build["GPU"] = gpu
+        remaining_budget -= gpu["price_BDT"]
+        
+        # Determine PSU requirement based on GPU
+        gpu_tier = self.get_component_tier(gpu["name"], "GPU")
+        min_psu_wattage = self.calculate_psu_requirement(gpu["name"], "HIGH")
+        build_requirements["min_wattage"] = min_psu_wattage
+        
+        # Step 3: Choose Motherboard (compatible with CPU)
+        mb_budget = int(budget * allocation["Motherboard"])
+        motherboard = self.find_best_component("Motherboard", 
+                                             min(mb_budget, remaining_budget), 
+                                             build_requirements)
+        if not motherboard:
+            return {"error": "No compatible motherboard found"}
+        
+        build["Motherboard"] = motherboard
+        remaining_budget -= motherboard["price_BDT"]
+        
+        # Step 4: Choose RAM (lots of RAM needed for content creation)
+        ram_budget = int(budget * allocation["RAM"])
+        ram_type = self.get_ram_type_for_socket(cpu_socket)
+        build_requirements["ram_type"] = ram_type
+        
+        ram = self.find_best_component("RAM", 
+                                     min(ram_budget, remaining_budget),
+                                     build_requirements)
+        if not ram:
+            return {"error": "No suitable RAM found"}
+        
+        build["RAM"] = ram
+        remaining_budget -= ram["price_BDT"]
+        
+        # Step 5: Choose Storage (fast SSD for content creation)
+        storage_budget = int(budget * allocation["Storage"])
+        storage = self.find_best_component("Storage", 
+                                         min(storage_budget, remaining_budget))
+        if storage:
+            build["Storage"] = storage
+            remaining_budget -= storage["price_BDT"]
+        
+        # Step 6: Choose PSU
+        psu_budget = int(budget * allocation["PSU"])
+        psu = self.find_best_component("PSU", 
+                                     min(psu_budget, remaining_budget),
+                                     {"min_wattage": min_psu_wattage})
+        if psu:
+            build["PSU"] = psu
+            remaining_budget -= psu["price_BDT"]
+        
+        # Step 7: Choose Case
+        case_budget = remaining_budget
+        case = self.find_best_component("Case", case_budget)
+        if case:
+            build["Case"] = case
+            remaining_budget -= case["price_BDT"]
+        
+        # Calculate totals and performance
+        total_price = sum(comp["price_BDT"] for comp in build.values() if isinstance(comp, dict))
+        avg_performance = sum(comp.get("performance_score", 50) for comp in build.values() if isinstance(comp, dict)) / len(build)
+        
+        return {
+            "build": build,
+            "total_price": total_price,
+            "budget": budget,
+            "remaining_budget": remaining_budget,
+            "avg_performance_score": round(avg_performance, 1),
+            "build_purpose": requirements.purpose.value,
+            "compatibility_checked": True,
+            "bottleneck_analysis": self.analyze_bottlenecks(build)
+        }
 
     def get_component_tier(self, component_name: str, category: str) -> str:
         """Determine component performance tier"""
@@ -353,6 +538,8 @@ class PCBuilderEngine:
             return self.build_gaming_pc(requirements)
         elif requirements.purpose in [BuildPurpose.OFFICE, BuildPurpose.PRODUCTIVITY]:
             return self.build_office_pc(requirements)
+        elif requirements.purpose == BuildPurpose.CONTENT_CREATION:
+            return self.build_content_creation_pc(requirements)
         else:
             return {"error": f"Build purpose {requirements.purpose.value} not yet implemented"}
 
