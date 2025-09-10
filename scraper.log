@@ -1,0 +1,68 @@
+2025-09-09 17:32:02,890 [INFO] Shutting down scheduler
+2025-09-09 17:32:02,891 [INFO] Scheduler has been shut down
+2025-09-09 17:32:04,590 [INFO] Connected to MongoDB
+2025-09-09 17:32:04,621 [INFO] Starting FastAPI server
+2025-09-09 17:32:04,636 [INFO] Starting scheduler
+2025-09-09 17:32:04,637 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-09-09 17:32:04,638 [INFO] Added job "scrape_components" to job store "default"
+2025-09-09 17:32:04,638 [INFO] Scheduler started
+2025-09-09 17:32:09,959 [INFO] Manual scrape triggered via /scrape-now
+2025-09-09 17:32:09,959 [INFO] Scraping CPU from https://www.startech.com.bd/component/processor
+2025-09-09 17:32:10,821 [INFO] Detected 6 pages for CPU
+2025-09-09 17:32:10,821 [INFO] Scraping page 1 for CPU: https://www.startech.com.bd/component/processor
+2025-09-09 17:32:11,380 [INFO] Found 20 items on page 1 for CPU
+2025-09-09 17:32:11,449 [INFO] Scraping page 2 for CPU: https://www.startech.com.bd/component/processor?page=2
+2025-09-09 17:32:12,290 [INFO] Found 20 items on page 2 for CPU
+2025-09-09 17:32:12,354 [INFO] Scraping page 3 for CPU: https://www.startech.com.bd/component/processor?page=3
+2025-09-09 17:32:12,962 [INFO] Found 20 items on page 3 for CPU
+2025-09-09 17:32:13,027 [INFO] Scraping page 4 for CPU: https://www.startech.com.bd/component/processor?page=4
+2025-09-09 17:32:13,639 [INFO] Found 20 items on page 4 for CPU
+2025-09-09 17:32:13,706 [INFO] Scraping page 5 for CPU: https://www.startech.com.bd/component/processor?page=5
+2025-09-09 17:32:14,607 [INFO] Found 20 items on page 5 for CPU
+2025-09-09 17:32:14,618 [WARNING] Could not parse price 'Up Coming' for AMD Ryzen 7 PRO 5750G Processor with Radeon Graphics on page 5
+2025-09-09 17:32:14,619 [WARNING] Could not parse price 'Up Coming' for Intel Core i3 14100F 14th Gen Raptor Lake Processor on page 5
+2025-09-09 17:32:14,619 [WARNING] Could not parse price 'Up Coming' for Intel Core i7 14700F 14th Gen Raptor Lake Processor on page 5
+2025-09-09 17:32:14,620 [WARNING] Could not parse price 'Up Coming' for Intel Core i9 14900F 14th Gen Raptor Lake Processor on page 5
+2025-09-09 17:32:14,620 [WARNING] Could not parse price 'Up Coming' for Intel Core Ultra 5 245KF Arrow Lake Processor on page 5
+2025-09-09 17:32:14,620 [WARNING] Could not parse price 'Up Coming' for Intel Core Ultra 7 265KF Arrow Lake Processor on page 5
+2025-09-09 17:32:14,621 [WARNING] Could not parse price 'Up Coming' for AMD Ryzen 5 4600G Processor with Radeon Graphics on page 5
+2025-09-09 17:32:14,627 [WARNING] Could not parse price 'Up Coming' for Intel 13th Gen Core i5 13600KF Raptor Lake Processor on page 5
+2025-09-09 17:32:14,627 [WARNING] Could not parse price 'Out Of Stock' for AMD Athlon 3000G Processor with Radeon Graphics on page 5
+2025-09-09 17:32:14,630 [WARNING] Could not parse price 'Out Of Stock' for Intel Core i3 10105F 10th Gen Processor on page 5
+2025-09-09 17:32:14,634 [WARNING] Could not parse price 'Out Of Stock' for Intel Core i5 14400F 14th Gen Raptor Lake Processor on page 5
+2025-09-09 17:32:14,638 [WARNING] Could not parse price 'Out Of Stock' for AMD Ryzen 7 5700G Processor with Radeon Graphics (Global) on page 5
+2025-09-09 17:32:14,638 [INFO] Scraping page 6 for CPU: https://www.startech.com.bd/component/processor?page=6
+2025-09-09 17:32:15,538 [INFO] Found 10 items on page 6 for CPU
+2025-09-09 17:32:15,539 [WARNING] Could not parse price 'Out Of Stock' for Intel Core i5 14500 14th Gen Raptor Lake Processor (Tray With Fan) on page 6
+2025-09-09 17:32:15,542 [WARNING] Could not parse price 'Out Of Stock' for Intel 10th Gen Core i7-10700K Processor on page 6
+2025-09-09 17:32:15,546 [WARNING] Could not parse price 'Out Of Stock' for Intel Core i5 14600KF 14th Gen Raptor Lake Processor on page 6
+2025-09-09 17:32:15,546 [WARNING] Could not parse price 'Out Of Stock' for AMD Ryzen 5 7600X3D Processor on page 6
+2025-09-09 17:32:15,554 [WARNING] Could not parse price 'Out Of Stock' for Intel 13th Gen Core i9 13900KF Raptor Lake Processor on page 6
+2025-09-09 17:32:15,557 [INFO] Scraping complete: 73 inserted, 20 updated
+2025-09-09 17:48:13,951 [INFO] Queried components: 20 found for category=None, max_price=None
+2025-09-09 17:48:34,045 [INFO] Queried components: 20 found for category=None, max_price=None
+2025-09-09 17:48:42,608 [INFO] Queried components: 20 found for category=None, max_price=None
+2025-09-09 17:48:47,632 [INFO] Shutting down scheduler
+2025-09-09 17:48:47,634 [INFO] Scheduler has been shut down
+2025-09-09 17:48:49,112 [INFO] Connected to MongoDB
+2025-09-09 17:48:49,138 [INFO] Starting FastAPI server
+2025-09-09 17:48:49,152 [INFO] Starting scheduler
+2025-09-09 17:48:49,153 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-09-09 17:48:49,154 [INFO] Added job "scrape_components" to job store "default"
+2025-09-09 17:48:49,154 [INFO] Scheduler started
+2025-09-09 17:48:53,582 [INFO] Queried components: 88 found for category=None, max_price=None
+2025-09-09 18:03:08,887 [INFO] Queried components: 88 found for category=None, max_price=None
+2025-09-09 18:13:50,967 [INFO] Connected to MongoDB
+2025-09-09 18:13:50,995 [INFO] Starting FastAPI server
+2025-09-09 18:13:51,010 [INFO] Starting scheduler
+2025-09-09 18:13:51,012 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-09-09 18:13:51,013 [INFO] Added job "scrape_components" to job store "default"
+2025-09-09 18:13:51,013 [INFO] Scheduler started
+2025-09-10 18:03:39,841 [INFO] Connected to MongoDB
+2025-09-10 18:03:39,901 [INFO] Starting FastAPI server
+2025-09-10 18:03:39,918 [INFO] Starting scheduler
+2025-09-10 18:03:39,918 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-09-10 18:03:39,919 [INFO] Added job "scrape_components" to job store "default"
+2025-09-10 18:03:39,919 [INFO] Scheduler started
+2025-09-10 18:18:40,177 [INFO] Shutting down scheduler
+2025-09-10 18:18:40,178 [INFO] Scheduler has been shut down
