@@ -1,0 +1,207 @@
+a processor typical card html look like this,
+
+<div class="p-item">
+              <div class="p-item-inner">
+                                   <div class="marks">
+                      <span class="mark">Save: 700৳</span>                                        </div>
+                                    <div class="p-item-img"><a href="https://www.startech.com.bd/amd-ryzen-5-5600-processor"><img src="https://www.startech.com.bd/image/cache/catalog/processor/amd/5600x/5600x-001-228x228.jpg" alt="AMD Ryzen 5 5600 Processor" width="228" height="228"></a></div>
+                  <div class="p-item-details">
+                      <h4 class="p-item-name"> <a href="https://www.startech.com.bd/amd-ryzen-5-5600-processor">AMD Ryzen 5 5600 Processor</a></h4>
+                      <div class="short-description">
+                          <ul><li>Speed: 3.5GHz up to 4.4GHz
+</li><li>Cache: L2: 3MB, L3: 32MB; Cores-6 &amp; Threads-12
+</li><li>Memory Speed: DDR4 Up to 3200MHz
+</li><li>AMD ZEN 3 Architecture</li></ul>
+                      </div>
+                                            <div class="p-item-price">
+                                                    <span class="price-new">11,300৳</span> <span class="price-old">12,000৳</span>
+                                                </div>
+                                            <div class="actions">
+                                                    <span class="st-btn btn-add-cart" type="button" onclick="cart.add('23200', '1');"><i class="material-icons">shopping_cart</i> Buy Now</span>
+                                                    <span class="st-btn btn-compare" onclick="compare.add('23200');"><i class="material-icons">library_add</i>Add to Compare</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+a motherboard typical card html look like this
+
+<div class="p-item">
+              <div class="p-item-inner">
+                                   <div class="marks">
+                      <span class="mark">Save: 200৳</span>                                        </div>
+                                    <div class="p-item-img"><a href="https://www.startech.com.bd/msi-a520m-a-pro-motherboard"><img src="https://www.startech.com.bd/image/cache/catalog/motherboard/msi/a520m-a-pro/a520m-a-pro-228x228.jpg" alt="MSI A520M-A Pro AM4 AMD Micro-ATX Motherboard" width="228" height="228"></a></div>
+                  <div class="p-item-details">
+                      <h4 class="p-item-name"> <a href="https://www.startech.com.bd/msi-a520m-a-pro-motherboard">MSI A520M-A Pro AM4 AMD Micro-ATX Motherboard</a></h4>
+                      <div class="short-description">
+                          <ul><li>AMD Ryzen 5000/4000G Series &amp; AMD Ryzen 3rd Generation Processors
+</li><li>PCB with 2OZ Thickened Copper
+</li><li>Supports up to 4600(OC) MHz RAM
+</li><li>Core Boost, Turbo M.2 &amp; Audio Boost</li></ul>
+                      </div>
+                                            <div class="p-item-price">
+                                                    <span class="price-new">8,100৳</span> <span class="price-old">8,300৳</span>
+                                                </div>
+                                            <div class="actions">
+                                                    <span class="st-btn btn-add-cart" type="button" onclick="cart.add('14048', '1');"><i class="material-icons">shopping_cart</i> Buy Now</span>
+                                                    <span class="st-btn btn-compare" onclick="compare.add('14048');"><i class="material-icons">library_add</i>Add to Compare</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+an example of ram information html look like this
+
+<div class="p-item">
+              <div class="p-item-inner">
+                                   <div class="p-item-img"><a href="https://www.startech.com.bd/aitc-kingsman-rgb-16gb-ddr4-3600mhz-ram"><img src="https://www.startech.com.bd/image/cache/catalog/ram/aitc/kingsman-rgb/kingsman-rgb-01-228x228.webp" alt="AITC Kingsman RGB 16GB DDR4 3600MHz Gaming Desktop RAM" width="228" height="228"></a></div>
+                  <div class="p-item-details">
+                      <h4 class="p-item-name"> <a href="https://www.startech.com.bd/aitc-kingsman-rgb-16gb-ddr4-3600mhz-ram">AITC Kingsman RGB 16GB DDR4 3600MHz Gaming Desktop RAM</a></h4>
+                      <div class="short-description">
+                          <ul><li>Memory Capacity: 16GB
+</li><li>Memory Type: DDR4
+</li><li>Memory Frequency: 3600MHz
+</li><li>Latency: CL18</li></ul>
+                      </div>
+                                            <div class="p-item-price">
+                          <span>6,100৳</span>                      </div>
+                                            <div class="actions">
+                                                    <span class="st-btn btn-add-cart" type="button" onclick="cart.add('44850', '1');"><i class="material-icons">shopping_cart</i> Buy Now</span>
+                                                    <span class="st-btn btn-compare" onclick="compare.add('44850');"><i class="material-icons">library_add</i>Add to Compare</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+
+an example gpu information look like this
+
+<div class="p-item">
+              <div class="p-item-inner">
+                                   <div class="p-item-img"><a href="https://www.startech.com.bd/gigabyte-geforce-rtx-5050-oc-low-profile-8g-graphics-card"><img src="https://www.startech.com.bd/image/cache/catalog/graphics-card/gigabyte/geforce-rtx-5050-oc-low-profile-8g/geforce-rtx-5050-oc-low-profile-8g-01-228x228.webp" alt="GIGABYTE GeForce RTX 5050 OC Low Profile 8GB GDDR6 Graphics Card" width="228" height="228"></a></div>
+                  <div class="p-item-details">
+                      <h4 class="p-item-name"> <a href="https://www.startech.com.bd/gigabyte-geforce-rtx-5050-oc-low-profile-8g-graphics-card">GIGABYTE GeForce RTX 5050 OC Low Profile 8GB GDDR6 Graphics Card</a></h4>
+                      <div class="short-description">
+                          <ul><li>Video Memory: 8GB GDDR6, PCI Express 5.0
+</li><li>Core Clock: 2587 MHz (Reference Card: 2572MHz)
+</li><li>CUDA Cores: 2560, Memory Clock: 20 Gbps
+</li><li>Display Outputs: 1x DP 2.1b, 1x DP 1.4a, 2x HDMI 2.1b</li></ul>
+                      </div>
+                                            <div class="p-item-price">
+                          <span>41,000৳</span>                      </div>
+                                            <div class="actions">
+                                                    <span class="st-btn btn-add-cart" type="button" onclick="cart.add('44743', '1');"><i class="material-icons">shopping_cart</i> Buy Now</span>
+                                                    <span class="st-btn btn-compare" onclick="compare.add('44743');"><i class="material-icons">library_add</i>Add to Compare</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+
+an example ssd information like this
+
+<div class="p-item">
+              <div class="p-item-inner">
+                                   <div class="marks">
+                      <span class="mark">Save: 200৳</span>                                        </div>
+                                    <div class="p-item-img"><a href="https://www.startech.com.bd/hp-fx900-pro-m2-512gb-pcie-nvme-ssd"><img src="https://www.startech.com.bd/image/cache/catalog/ssd/hp-ssd/fx900-pro/fx900-pro-01-228x228.webp" alt="HP FX900 Pro M.2 512GB PCIe NVMe Internal SSD" width="228" height="228"></a></div>
+                  <div class="p-item-details">
+                      <h4 class="p-item-name"> <a href="https://www.startech.com.bd/hp-fx900-pro-m2-512gb-pcie-nvme-ssd">HP FX900 Pro M.2 512GB PCIe NVMe Internal SSD</a></h4>
+                      <div class="short-description">
+                          <ul><li>Interface: PCI-Express 4.0 x4
+</li><li>Capacity: 512GB
+</li><li>Sequential R/W: up to 7000MB/s / 3800MB/s
+</li><li>Form Factor: M.2 2280, MTBF: &gt;=1000000 Hours</li></ul>
+                      </div>
+                                            <div class="p-item-price">
+                          <span>Out Of Stock</span>
+                      </div>
+                                            <div class="actions">
+                                                    <span class="st-btn stock-status">Out Of Stock</span>
+                                                    <span class="st-btn btn-compare" onclick="compare.add('38869');"><i class="material-icons">library_add</i>Add to Compare</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+an example of psu information look like this
+
+<div class="p-item">
+              <div class="p-item-inner">
+                                   <div class="p-item-img"><a href="https://www.startech.com.bd/cougar-stc550-550w-power-supply"><img src="https://www.startech.com.bd/image/cache/catalog/power-supply/cougar/stc550/stc550-01-228x228.webp" alt="Cougar STC550 550W 80+ White Non-Modular Power Supply " width="228" height="228"></a></div>
+                  <div class="p-item-details">
+                      <h4 class="p-item-name"> <a href="https://www.startech.com.bd/cougar-stc550-550w-power-supply">Cougar STC550 550W 80+ White Non-Modular Power Supply </a></h4>
+                      <div class="short-description">
+                          <ul><li>80 PLUS White Certified
+</li><li>Up to 86% efficiency
+</li><li>120mm Extreme Temperature Control Fan
+</li><li>Strong Safeguards : OCP, OPP, OVP, UVP &amp; SCP</li></ul>
+                      </div>
+                                            <div class="p-item-price">
+                          <span>5,000৳</span>                      </div>
+                                            <div class="actions">
+                                                    <span class="st-btn btn-add-cart" type="button" onclick="cart.add('39487', '1');"><i class="material-icons">shopping_cart</i> Buy Now</span>
+                                                    <span class="st-btn btn-compare" onclick="compare.add('39487');"><i class="material-icons">library_add</i>Add to Compare</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+an example casing information look like this
+
+<div class="p-item">
+              <div class="p-item-inner">
+                                   <div class="marks">
+                      <span class="mark">Save: 500৳</span>                                        </div>
+                                    <div class="p-item-img"><a href="https://www.startech.com.bd/ars-legend-171-v2-gaming-casing-white"><img src="https://www.startech.com.bd/image/cache/catalog/casing/ars/legend-171-v2/legend-171-v2-white-01-228x228.webp" alt="ARS Legend 171 V2 ARGB M-ATX Mid Tower Gaming Casing White" width="228" height="228"></a></div>
+                  <div class="p-item-details">
+                      <h4 class="p-item-name"> <a href="https://www.startech.com.bd/ars-legend-171-v2-gaming-casing-white">ARS Legend 171 V2 ARGB M-ATX Mid Tower Gaming Casing White</a></h4>
+                      <div class="short-description">
+                          <ul><li>Motherboard Support: M-ATX, Mini-ITX
+</li><li>Tempered Glass: Side &amp; Front Panel
+</li><li>Pre-Install Fans: 5x ARGB fans
+</li><li>I/O Ports: 1 x USB 3.0, 2 x USB 2.0</li></ul>
+                      </div>
+                                            <div class="p-item-price">
+                                                    <span class="price-new">2,900৳</span> <span class="price-old">3,400৳</span>
+                                                </div>
+                                            <div class="actions">
+                                                    <span class="st-btn btn-add-cart" type="button" onclick="cart.add('44594', '1');"><i class="material-icons">shopping_cart</i> Buy Now</span>
+                                                    <span class="st-btn btn-compare" onclick="compare.add('44594');"><i class="material-icons">library_add</i>Add to Compare</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+a typical cooling fan information look like this
+
+<div class="p-item">
+              <div class="p-item-inner">
+                                   <div class="marks">
+                      <span class="mark">Save: 200৳</span>                                        </div>
+                                    <div class="p-item-img"><a href="https://www.startech.com.bd/uphere-up2kc8c-argb-cpu-cooler"><img src="https://www.startech.com.bd/image/cache/catalog/cpu-cooler/uphere/up2kc8c/up2kc8c-001-228x228.webp" alt="upHere UP2KC8C ARGB Dual Tower Air CPU Cooler" width="228" height="228"></a></div>
+                  <div class="p-item-details">
+                      <h4 class="p-item-name"> <a href="https://www.startech.com.bd/uphere-up2kc8c-argb-cpu-cooler">upHere UP2KC8C ARGB Dual Tower Air CPU Cooler</a></h4>
+                      <div class="short-description">
+                          <ul><li>Fan Speed: 600-1650 RPM +/- 10%
+</li><li>Heatpipes Quantity: Φ6mm*8
+</li><li>Bearing Type: Hydraulic Bearing
+</li><li>Universal Compatibility with Intel and AMD</li></ul>
+                      </div>
+                                            <div class="p-item-price">
+                                                    <span class="price-new">4,800৳</span> <span class="price-old">5,000৳</span>
+                                                </div>
+                                            <div class="actions">
+                                                    <span class="st-btn btn-add-cart" type="button" onclick="cart.add('43928', '1');"><i class="material-icons">shopping_cart</i> Buy Now</span>
+                                                    <span class="st-btn btn-compare" onclick="compare.add('43928');"><i class="material-icons">library_add</i>Add to Compare</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+

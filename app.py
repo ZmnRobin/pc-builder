@@ -62,13 +62,22 @@ async def initialize_app():
         raise
 
 async def scrape_components_task():
-    """Background task for scraping components"""
+    """Background task for scraping all components"""
     try:
-        logger.info("Starting scheduled component scraping")
+        logger.info("Starting manual component scraping")
         result = await scraper.scrape_all_components()
         logger.info(f"Scraping completed: {result}")
     except Exception as e:
-        logger.error(f"Error in scheduled scraping: {e}")
+        logger.error(f"Error in manual scraping: {e}")
+
+async def scrape_category_task(category: str):
+    """Background task for scraping specific category"""
+    try:
+        logger.info(f"Starting manual {category} scraping")
+        result = await scraper.scrape_category_only(category)
+        logger.info(f"{category} scraping completed: {result}")
+    except Exception as e:
+        logger.error(f"Error in {category} scraping: {e}")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -78,10 +87,10 @@ async def lifespan(app: FastAPI):
     # Initialize application
     await initialize_app()
     
-    # Start scheduler
-    scheduler.add_job(scrape_components_task, 'interval', hours=SCRAPING_INTERVAL_HOURS)
-    scheduler.start()
-    logger.info("Scheduler started")
+    # Scheduler disabled for manual control
+    # scheduler.add_job(scrape_components_task, 'interval', hours=SCRAPING_INTERVAL_HOURS)
+    # scheduler.start()
+    logger.info("Scheduler disabled - using manual scraping control")
     
     yield
     
@@ -262,12 +271,32 @@ async def get_components(
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/scrape-now")
-async def trigger_scrape(background_tasks: BackgroundTasks):
-    """Manually trigger component scraping"""
+async def trigger_scrape(
+    background_tasks: BackgroundTasks,
+    category: Optional[str] = None
+):
+    """
+    Manually trigger component scraping
+    
+    - **category**: Optional category to scrape (CPU, GPU, RAM, Motherboard, Storage, PSU, Case)
+    - If no category specified, scrapes all components
+    """
     try:
-        logger.info("Manual scrape triggered via /scrape-now")
-        background_tasks.add_task(scrape_components_task)
-        return {"message": "Scraping started in background", "timestamp": datetime.now().isoformat()}
+        if category:
+            logger.info(f"Manual scrape triggered for {category} via /scrape-now")
+            background_tasks.add_task(scrape_category_task, category)
+            return {
+                "message": f"{category} scraping started in background", 
+                "category": category,
+                "timestamp": datetime.now().isoformat()
+            }
+        else:
+            logger.info("Manual scrape triggered for all components via /scrape-now")
+            background_tasks.add_task(scrape_components_task)
+            return {
+                "message": "All components scraping started in background", 
+                "timestamp": datetime.now().isoformat()
+            }
     except Exception as e:
         logger.error(f"Error triggering scrape: {e}")
         raise HTTPException(status_code=500, detail=str(e))

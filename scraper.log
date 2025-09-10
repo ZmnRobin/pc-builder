@@ -1,165 +1,197 @@
-2025-09-10 22:56:46,980 [INFO] app: Starting PC Builder API
-2025-09-10 22:56:47,026 [INFO] database: Connected to MongoDB
-2025-09-10 22:56:47,028 [INFO] database: Created index: [('category', 1), ('price_BDT', 1)]
-2025-09-10 22:56:47,028 [INFO] database: Created index: [('name', 1), ('category', 1)]
-2025-09-10 22:56:47,029 [INFO] database: Created index: [('stock', 1)]
-2025-09-10 22:56:47,029 [INFO] database: Created index: [('last_updated', -1)]
-2025-09-10 22:56:47,029 [INFO] database: Created index: [('performance_score', -1)]
-2025-09-10 22:56:47,030 [INFO] database: Created index: [('retailer', 1)]
-2025-09-10 22:56:47,030 [INFO] database: Created index: [('name', 'text'), ('category', 'text')]
-2025-09-10 22:56:47,031 [INFO] database: Database initialization complete
-2025-09-10 22:56:47,031 [INFO] app: Database initialized
-2025-09-10 22:56:47,031 [INFO] app: Application initialization complete
-2025-09-10 22:56:47,032 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2025-09-10 22:56:47,033 [INFO] apscheduler.scheduler: Added job "scrape_components_task" to job store "default"
-2025-09-10 22:56:47,033 [INFO] apscheduler.scheduler: Scheduler started
-2025-09-10 22:56:47,033 [INFO] app: Scheduler started
-2025-09-10 22:58:07,525 [INFO] app: Manual scrape triggered via /scrape-now
-2025-09-10 22:58:07,526 [INFO] app: Starting scheduled component scraping
-2025-09-10 22:58:07,526 [INFO] scraper: Scraping from StarTech.com.bd
-2025-09-10 22:58:07,526 [INFO] scraper: Scraping CPU from https://www.startech.com.bd/component/processor
-2025-09-10 22:58:08,293 [INFO] scraper: Detected 6 pages for CPU
-2025-09-10 22:58:08,293 [INFO] scraper: Scraping page 1 for CPU: https://www.startech.com.bd/component/processor
-2025-09-10 22:58:09,000 [INFO] scraper: Found 20 items on page 1 for CPU
-2025-09-10 22:58:41,836 [INFO] scraper: Scraping page 2 for CPU: https://www.startech.com.bd/component/processor?page=2
-2025-09-10 22:58:42,463 [INFO] scraper: Found 20 items on page 2 for CPU
-2025-09-10 22:59:15,659 [INFO] scraper: Scraping page 3 for CPU: https://www.startech.com.bd/component/processor?page=3
-2025-09-10 22:59:16,279 [INFO] scraper: Found 20 items on page 3 for CPU
-2025-09-10 22:59:49,460 [INFO] scraper: Scraping page 4 for CPU: https://www.startech.com.bd/component/processor?page=4
-2025-09-10 22:59:50,179 [INFO] scraper: Found 20 items on page 4 for CPU
-2025-09-10 23:00:23,972 [INFO] scraper: Scraping page 5 for CPU: https://www.startech.com.bd/component/processor?page=5
-2025-09-10 23:00:24,707 [INFO] scraper: Found 20 items on page 5 for CPU
-2025-09-10 23:00:36,924 [INFO] scraper: Scraping page 6 for CPU: https://www.startech.com.bd/component/processor?page=6
-2025-09-10 23:00:37,638 [INFO] scraper: Found 10 items on page 6 for CPU
-2025-09-10 23:00:48,110 [INFO] scraper: Scraping GPU from https://www.startech.com.bd/component/graphics-card
-2025-09-10 23:00:48,955 [INFO] scraper: Detected 9 pages for GPU
-2025-09-10 23:00:48,956 [INFO] scraper: Scraping page 1 for GPU: https://www.startech.com.bd/component/graphics-card
-2025-09-10 23:00:49,634 [INFO] scraper: Found 20 items on page 1 for GPU
-2025-09-10 23:01:22,856 [INFO] scraper: Scraping page 2 for GPU: https://www.startech.com.bd/component/graphics-card?page=2
-2025-09-10 23:01:23,598 [INFO] scraper: Found 20 items on page 2 for GPU
-2025-09-10 23:01:56,594 [INFO] scraper: Scraping page 3 for GPU: https://www.startech.com.bd/component/graphics-card?page=3
-2025-09-10 23:01:57,302 [INFO] scraper: Found 20 items on page 3 for GPU
-2025-09-10 23:02:30,561 [INFO] scraper: Scraping page 4 for GPU: https://www.startech.com.bd/component/graphics-card?page=4
-2025-09-10 23:02:31,424 [INFO] scraper: Found 20 items on page 4 for GPU
-2025-09-10 23:03:06,532 [INFO] scraper: Scraping page 5 for GPU: https://www.startech.com.bd/component/graphics-card?page=5
-2025-09-10 23:03:07,352 [INFO] scraper: Found 20 items on page 5 for GPU
-2025-09-10 23:03:47,861 [INFO] scraper: Scraping page 6 for GPU: https://www.startech.com.bd/component/graphics-card?page=6
-2025-09-10 23:03:48,522 [INFO] scraper: Found 20 items on page 6 for GPU
-2025-09-10 23:04:21,439 [INFO] scraper: Scraping page 7 for GPU: https://www.startech.com.bd/component/graphics-card?page=7
-2025-09-10 23:04:22,119 [INFO] scraper: Found 20 items on page 7 for GPU
-2025-09-10 23:04:54,931 [INFO] scraper: Scraping page 8 for GPU: https://www.startech.com.bd/component/graphics-card?page=8
-2025-09-10 23:04:55,719 [INFO] scraper: Found 20 items on page 8 for GPU
-2025-09-10 23:05:30,338 [INFO] scraper: Scraping page 9 for GPU: https://www.startech.com.bd/component/graphics-card?page=9
-2025-09-10 23:05:31,573 [INFO] scraper: Found 20 items on page 9 for GPU
-2025-09-10 23:06:07,593 [INFO] scraper: Scraping RAM from https://www.startech.com.bd/component/ram
-2025-09-10 23:06:08,515 [INFO] scraper: Detected 9 pages for RAM
-2025-09-10 23:06:08,515 [INFO] scraper: Scraping page 1 for RAM: https://www.startech.com.bd/component/ram
-2025-09-10 23:06:09,548 [INFO] scraper: Found 20 items on page 1 for RAM
-2025-09-10 23:06:44,149 [INFO] scraper: Scraping page 2 for RAM: https://www.startech.com.bd/component/ram?page=2
-2025-09-10 23:06:44,957 [INFO] scraper: Found 20 items on page 2 for RAM
-2025-09-10 23:07:19,068 [INFO] scraper: Scraping page 3 for RAM: https://www.startech.com.bd/component/ram?page=3
-2025-09-10 23:07:20,004 [INFO] scraper: Found 20 items on page 3 for RAM
-2025-09-10 23:07:54,024 [INFO] scraper: Scraping page 4 for RAM: https://www.startech.com.bd/component/ram?page=4
-2025-09-10 23:07:54,657 [INFO] scraper: Found 20 items on page 4 for RAM
-2025-09-10 23:08:28,886 [INFO] scraper: Scraping page 5 for RAM: https://www.startech.com.bd/component/ram?page=5
-2025-09-10 23:08:29,753 [INFO] scraper: Found 20 items on page 5 for RAM
-2025-09-10 23:09:01,894 [INFO] scraper: Scraping page 6 for RAM: https://www.startech.com.bd/component/ram?page=6
-2025-09-10 23:09:02,569 [INFO] scraper: Found 20 items on page 6 for RAM
-2025-09-10 23:09:03,576 [INFO] scraper: Scraping page 7 for RAM: https://www.startech.com.bd/component/ram?page=7
-2025-09-10 23:09:04,319 [INFO] scraper: Found 20 items on page 7 for RAM
-2025-09-10 23:09:13,233 [INFO] scraper: Scraping page 8 for RAM: https://www.startech.com.bd/component/ram?page=8
-2025-09-10 23:09:13,873 [INFO] scraper: Found 20 items on page 8 for RAM
-2025-09-10 23:09:27,774 [INFO] scraper: Scraping page 9 for RAM: https://www.startech.com.bd/component/ram?page=9
-2025-09-10 23:09:28,463 [INFO] scraper: Found 20 items on page 9 for RAM
-2025-09-10 23:09:35,855 [INFO] scraper: Scraping Motherboard from https://www.startech.com.bd/component/motherboard
-2025-09-10 23:09:36,600 [INFO] scraper: Detected 9 pages for Motherboard
-2025-09-10 23:09:36,601 [INFO] scraper: Scraping page 1 for Motherboard: https://www.startech.com.bd/component/motherboard
-2025-09-10 23:09:37,277 [INFO] scraper: Found 20 items on page 1 for Motherboard
-2025-09-10 23:10:10,225 [INFO] scraper: Scraping page 2 for Motherboard: https://www.startech.com.bd/component/motherboard?page=2
-2025-09-10 23:10:10,972 [INFO] scraper: Found 20 items on page 2 for Motherboard
-2025-09-10 23:10:43,947 [INFO] scraper: Scraping page 3 for Motherboard: https://www.startech.com.bd/component/motherboard?page=3
-2025-09-10 23:10:44,650 [INFO] scraper: Found 20 items on page 3 for Motherboard
-2025-09-10 23:11:17,772 [INFO] scraper: Scraping page 4 for Motherboard: https://www.startech.com.bd/component/motherboard?page=4
-2025-09-10 23:11:18,424 [INFO] scraper: Found 20 items on page 4 for Motherboard
-2025-09-10 23:11:51,600 [INFO] scraper: Scraping page 5 for Motherboard: https://www.startech.com.bd/component/motherboard?page=5
-2025-09-10 23:11:51,602 [ERROR] scraper: Error scraping page 5 for Motherboard: HTTPSConnectionPool(host='www.startech.com.bd', port=443): Max retries exceeded with url: /component/motherboard?page=5 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000274CD5FA150>: Failed to resolve 'www.startech.com.bd' ([Errno 11001] getaddrinfo failed)"))
-2025-09-10 23:11:52,603 [INFO] scraper: Scraping page 6 for Motherboard: https://www.startech.com.bd/component/motherboard?page=6
-2025-09-10 23:11:52,605 [ERROR] scraper: Error scraping page 6 for Motherboard: HTTPSConnectionPool(host='www.startech.com.bd', port=443): Max retries exceeded with url: /component/motherboard?page=6 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000274CD5FAA50>: Failed to resolve 'www.startech.com.bd' ([Errno 11001] getaddrinfo failed)"))
-2025-09-10 23:15:57,154 [INFO] scraper: Scraping page 7 for Motherboard: https://www.startech.com.bd/component/motherboard?page=7
-2025-09-10 23:15:57,155 [ERROR] scraper: Error scraping page 7 for Motherboard: HTTPSConnectionPool(host='www.startech.com.bd', port=443): Max retries exceeded with url: /component/motherboard?page=7 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000274CD5FB3B0>: Failed to resolve 'www.startech.com.bd' ([Errno 11001] getaddrinfo failed)"))
-2025-09-10 23:15:58,156 [INFO] scraper: Scraping page 8 for Motherboard: https://www.startech.com.bd/component/motherboard?page=8
-2025-09-10 23:15:58,157 [ERROR] scraper: Error scraping page 8 for Motherboard: HTTPSConnectionPool(host='www.startech.com.bd', port=443): Max retries exceeded with url: /component/motherboard?page=8 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000274CD5FB350>: Failed to resolve 'www.startech.com.bd' ([Errno 11001] getaddrinfo failed)"))
-2025-09-10 23:15:59,158 [INFO] scraper: Scraping page 9 for Motherboard: https://www.startech.com.bd/component/motherboard?page=9
-2025-09-10 23:16:00,107 [INFO] scraper: Found 20 items on page 9 for Motherboard
-2025-09-10 23:16:33,762 [INFO] scraper: Scraping Storage from https://www.startech.com.bd/ssd
-2025-09-10 23:16:34,432 [INFO] scraper: Detected 9 pages for Storage
-2025-09-10 23:16:34,432 [INFO] scraper: Scraping page 1 for Storage: https://www.startech.com.bd/ssd
-2025-09-10 23:16:35,180 [INFO] scraper: Found 20 items on page 1 for Storage
-2025-09-10 23:17:08,486 [INFO] scraper: Scraping page 2 for Storage: https://www.startech.com.bd/ssd?page=2
-2025-09-10 23:17:09,329 [INFO] scraper: Found 20 items on page 2 for Storage
-2025-09-10 23:17:42,273 [INFO] scraper: Scraping page 3 for Storage: https://www.startech.com.bd/ssd?page=3
-2025-09-10 23:17:42,960 [INFO] scraper: Found 20 items on page 3 for Storage
-2025-09-10 23:18:16,036 [INFO] scraper: Scraping page 4 for Storage: https://www.startech.com.bd/ssd?page=4
-2025-09-10 23:18:16,694 [INFO] scraper: Found 20 items on page 4 for Storage
-2025-09-10 23:18:49,635 [INFO] scraper: Scraping page 5 for Storage: https://www.startech.com.bd/ssd?page=5
-2025-09-10 23:18:50,334 [INFO] scraper: Found 20 items on page 5 for Storage
-2025-09-10 23:19:23,113 [INFO] scraper: Scraping page 6 for Storage: https://www.startech.com.bd/ssd?page=6
-2025-09-10 23:19:23,855 [INFO] scraper: Found 20 items on page 6 for Storage
-2025-09-10 23:19:56,607 [INFO] scraper: Scraping page 7 for Storage: https://www.startech.com.bd/ssd?page=7
-2025-09-10 23:19:57,339 [INFO] scraper: Found 20 items on page 7 for Storage
-2025-09-10 23:20:27,067 [INFO] scraper: Scraping page 8 for Storage: https://www.startech.com.bd/ssd?page=8
-2025-09-10 23:20:27,695 [INFO] scraper: Found 20 items on page 8 for Storage
-2025-09-10 23:20:58,949 [INFO] scraper: Scraping page 9 for Storage: https://www.startech.com.bd/ssd?page=9
-2025-09-10 23:20:59,728 [INFO] scraper: Found 20 items on page 9 for Storage
-2025-09-10 23:21:00,737 [INFO] scraper: Scraping PSU from https://www.startech.com.bd/component/power-supply
-2025-09-10 23:21:01,905 [INFO] scraper: Detected 9 pages for PSU
-2025-09-10 23:21:01,905 [INFO] scraper: Scraping page 1 for PSU: https://www.startech.com.bd/component/power-supply
-2025-09-10 23:21:02,529 [INFO] scraper: Found 20 items on page 1 for PSU
-2025-09-10 23:21:36,413 [INFO] scraper: Scraping page 2 for PSU: https://www.startech.com.bd/component/power-supply?page=2
-2025-09-10 23:21:37,063 [INFO] scraper: Found 20 items on page 2 for PSU
-2025-09-10 23:22:08,362 [INFO] scraper: Scraping page 3 for PSU: https://www.startech.com.bd/component/power-supply?page=3
-2025-09-10 23:22:09,007 [INFO] scraper: Found 20 items on page 3 for PSU
-2025-09-10 23:22:41,878 [INFO] scraper: Scraping page 4 for PSU: https://www.startech.com.bd/component/power-supply?page=4
-2025-09-10 23:22:42,552 [INFO] scraper: Found 20 items on page 4 for PSU
-2025-09-10 23:23:15,311 [INFO] scraper: Scraping page 5 for PSU: https://www.startech.com.bd/component/power-supply?page=5
-2025-09-10 23:23:16,081 [INFO] scraper: Found 20 items on page 5 for PSU
-2025-09-10 23:23:29,817 [INFO] scraper: Scraping page 6 for PSU: https://www.startech.com.bd/component/power-supply?page=6
-2025-09-10 23:23:30,517 [INFO] scraper: Found 20 items on page 6 for PSU
-2025-09-10 23:23:41,057 [INFO] scraper: Scraping page 7 for PSU: https://www.startech.com.bd/component/power-supply?page=7
-2025-09-10 23:23:41,679 [INFO] scraper: Found 20 items on page 7 for PSU
-2025-09-10 23:23:44,323 [INFO] scraper: Scraping page 8 for PSU: https://www.startech.com.bd/component/power-supply?page=8
-2025-09-10 23:23:44,947 [INFO] scraper: Found 20 items on page 8 for PSU
-2025-09-10 23:23:55,446 [INFO] scraper: Scraping page 9 for PSU: https://www.startech.com.bd/component/power-supply?page=9
-2025-09-10 23:23:56,073 [INFO] scraper: Found 20 items on page 9 for PSU
-2025-09-10 23:24:13,106 [INFO] scraper: Scraping Case from https://www.startech.com.bd/component/casing
-2025-09-10 23:24:13,789 [INFO] scraper: Detected 9 pages for Case
-2025-09-10 23:24:13,789 [INFO] scraper: Scraping page 1 for Case: https://www.startech.com.bd/component/casing
-2025-09-10 23:24:14,557 [INFO] scraper: Found 20 items on page 1 for Case
-2025-09-10 23:24:47,256 [INFO] scraper: Scraping page 2 for Case: https://www.startech.com.bd/component/casing?page=2
-2025-09-10 23:24:47,926 [INFO] scraper: Found 20 items on page 2 for Case
-2025-09-10 23:25:20,978 [INFO] scraper: Scraping page 3 for Case: https://www.startech.com.bd/component/casing?page=3
-2025-09-10 23:25:21,725 [INFO] scraper: Found 20 items on page 3 for Case
-2025-09-10 23:25:53,613 [INFO] scraper: Scraping page 4 for Case: https://www.startech.com.bd/component/casing?page=4
-2025-09-10 23:25:54,338 [INFO] scraper: Found 20 items on page 4 for Case
-2025-09-10 23:26:27,717 [INFO] scraper: Scraping page 5 for Case: https://www.startech.com.bd/component/casing?page=5
-2025-09-10 23:26:28,415 [INFO] scraper: Found 20 items on page 5 for Case
-2025-09-10 23:26:58,314 [INFO] scraper: Scraping page 6 for Case: https://www.startech.com.bd/component/casing?page=6
-2025-09-10 23:26:59,016 [INFO] scraper: Found 20 items on page 6 for Case
-2025-09-10 23:27:31,984 [INFO] scraper: Scraping page 7 for Case: https://www.startech.com.bd/component/casing?page=7
-2025-09-10 23:27:32,727 [INFO] scraper: Found 20 items on page 7 for Case
-2025-09-10 23:28:06,122 [INFO] scraper: Scraping page 8 for Case: https://www.startech.com.bd/component/casing?page=8
-2025-09-10 23:28:06,892 [INFO] scraper: Found 20 items on page 8 for Case
-2025-09-10 23:28:38,483 [INFO] scraper: Scraping page 9 for Case: https://www.startech.com.bd/component/casing?page=9
-2025-09-10 23:28:39,172 [INFO] scraper: Found 20 items on page 9 for Case
-2025-09-10 23:29:12,405 [INFO] scraper: Scraping complete: 926 inserted, 3 updated
-2025-09-10 23:29:12,405 [INFO] app: Scraping completed: {'status': 'Scraping complete', 'inserted': 926, 'updated': 3, 'timestamp': '2025-09-10T23:29:12.405354'}
-2025-09-10 23:35:27,647 [INFO] engine: Building PC for purpose: gaming_mid, budget: 80000
-2025-09-10 23:35:27,651 [ERROR] app: Error in recommend_build: 400: No compatible motherboard found
-2025-09-10 23:35:44,057 [INFO] engine: Building PC for purpose: gaming_mid, budget: 50000
-2025-09-10 23:35:44,059 [ERROR] app: Error in recommend_build: 400: No compatible motherboard found
-2025-09-10 23:57:09,002 [INFO] engine: Building PC for purpose: office, budget: 50000
-2025-09-10 23:57:09,004 [ERROR] app: Error in recommend_build: 400: No compatible motherboard found
-2025-09-10 23:57:17,229 [INFO] engine: Building PC for purpose: office, budget: 50000
-2025-09-10 23:57:17,231 [ERROR] app: Error in recommend_build: 400: No compatible motherboard found
-2025-09-10 23:57:23,812 [INFO] engine: Building PC for purpose: office, budget: 80000
-2025-09-10 23:57:23,814 [ERROR] app: Error in recommend_build: 400: No compatible motherboard found
+2025-09-11 02:02:38,935 [INFO] app: Starting PC Builder API
+2025-09-11 02:02:38,968 [INFO] database: Connected to MongoDB
+2025-09-11 02:02:38,969 [INFO] database: Created index: [('category', 1), ('price_BDT', 1)]
+2025-09-11 02:02:38,970 [INFO] database: Created index: [('name', 1), ('category', 1)]
+2025-09-11 02:02:38,970 [INFO] database: Created index: [('stock', 1)]
+2025-09-11 02:02:38,970 [INFO] database: Created index: [('last_updated', -1)]
+2025-09-11 02:02:38,971 [INFO] database: Created index: [('performance_score', -1)]
+2025-09-11 02:02:38,971 [INFO] database: Created index: [('retailer', 1)]
+2025-09-11 02:02:38,971 [INFO] database: Created index: [('name', 'text'), ('category', 'text')]
+2025-09-11 02:02:38,973 [INFO] database: Database initialization complete
+2025-09-11 02:02:38,973 [INFO] app: Database initialized
+2025-09-11 02:02:38,973 [INFO] app: Application initialization complete
+2025-09-11 02:02:38,973 [INFO] app: Scheduler disabled - using manual scraping control
+2025-09-11 02:05:21,948 [INFO] app: Manual scrape triggered for CPU via /scrape-now
+2025-09-11 02:05:21,949 [INFO] app: Starting manual CPU scraping
+2025-09-11 02:05:21,949 [INFO] scraper: Scraping only CPU category
+2025-09-11 02:05:21,949 [INFO] scraper: Scraping CPU from StarTech.com.bd
+2025-09-11 02:05:21,950 [INFO] scraper: Scraping CPU from https://www.startech.com.bd/component/processor
+2025-09-11 02:05:22,690 [INFO] scraper: Detected 6 pages for CPU
+2025-09-11 02:05:22,691 [INFO] scraper: Scraping page 1 for CPU: https://www.startech.com.bd/component/processor
+2025-09-11 02:05:23,333 [INFO] scraper: Found 20 items on page 1 for CPU
+2025-09-11 02:05:56,159 [INFO] scraper: Scraping page 2 for CPU: https://www.startech.com.bd/component/processor?page=2
+2025-09-11 02:05:56,759 [INFO] scraper: Found 20 items on page 2 for CPU
+2025-09-11 02:06:29,437 [INFO] scraper: Scraping page 3 for CPU: https://www.startech.com.bd/component/processor?page=3
+2025-09-11 02:06:30,039 [INFO] scraper: Found 20 items on page 3 for CPU
+2025-09-11 02:07:02,635 [INFO] scraper: Scraping page 4 for CPU: https://www.startech.com.bd/component/processor?page=4
+2025-09-11 02:07:03,327 [INFO] scraper: Found 20 items on page 4 for CPU
+2025-09-11 02:07:35,479 [INFO] scraper: Scraping page 5 for CPU: https://www.startech.com.bd/component/processor?page=5
+2025-09-11 02:07:36,112 [INFO] scraper: Found 20 items on page 5 for CPU
+2025-09-11 02:07:43,278 [INFO] scraper: Scraping page 6 for CPU: https://www.startech.com.bd/component/processor?page=6
+2025-09-11 02:07:43,907 [INFO] scraper: Found 10 items on page 6 for CPU
+2025-09-11 02:07:47,945 [INFO] scraper: CPU scraping complete: 86 inserted, 0 updated
+2025-09-11 02:07:47,945 [INFO] app: CPU scraping completed: {'status': 'CPU scraping complete', 'category': 'CPU', 'inserted': 86, 'updated': 0, 'timestamp': '2025-09-11T02:07:47.945604'}
+2025-09-11 02:08:30,225 [INFO] app: Manual scrape triggered for GPU via /scrape-now
+2025-09-11 02:08:30,226 [INFO] app: Starting manual GPU scraping
+2025-09-11 02:08:30,226 [INFO] scraper: Scraping only GPU category
+2025-09-11 02:08:30,226 [INFO] scraper: Scraping GPU from StarTech.com.bd
+2025-09-11 02:08:30,226 [INFO] scraper: Scraping GPU from https://www.startech.com.bd/component/graphics-card
+2025-09-11 02:08:30,953 [INFO] scraper: Detected 9 pages for GPU
+2025-09-11 02:08:30,953 [INFO] scraper: Scraping page 1 for GPU: https://www.startech.com.bd/component/graphics-card
+2025-09-11 02:08:31,570 [INFO] scraper: Found 20 items on page 1 for GPU
+2025-09-11 02:09:03,767 [INFO] scraper: Scraping page 2 for GPU: https://www.startech.com.bd/component/graphics-card?page=2
+2025-09-11 02:09:05,364 [INFO] scraper: Found 20 items on page 2 for GPU
+2025-09-11 02:09:37,887 [INFO] scraper: Scraping page 3 for GPU: https://www.startech.com.bd/component/graphics-card?page=3
+2025-09-11 02:09:38,583 [INFO] scraper: Found 20 items on page 3 for GPU
+2025-09-11 02:10:10,719 [INFO] scraper: Scraping page 4 for GPU: https://www.startech.com.bd/component/graphics-card?page=4
+2025-09-11 02:10:11,351 [INFO] scraper: Found 20 items on page 4 for GPU
+2025-09-11 02:10:43,809 [INFO] scraper: Scraping page 5 for GPU: https://www.startech.com.bd/component/graphics-card?page=5
+2025-09-11 02:10:44,453 [INFO] scraper: Found 20 items on page 5 for GPU
+2025-09-11 02:11:17,253 [INFO] scraper: Scraping page 6 for GPU: https://www.startech.com.bd/component/graphics-card?page=6
+2025-09-11 02:11:17,946 [INFO] scraper: Found 20 items on page 6 for GPU
+2025-09-11 02:11:50,196 [INFO] scraper: Scraping page 7 for GPU: https://www.startech.com.bd/component/graphics-card?page=7
+2025-09-11 02:11:50,895 [INFO] scraper: Found 20 items on page 7 for GPU
+2025-09-11 02:12:23,293 [INFO] scraper: Scraping page 8 for GPU: https://www.startech.com.bd/component/graphics-card?page=8
+2025-09-11 02:12:23,887 [INFO] scraper: Found 20 items on page 8 for GPU
+2025-09-11 02:12:56,249 [INFO] scraper: Scraping page 9 for GPU: https://www.startech.com.bd/component/graphics-card?page=9
+2025-09-11 02:12:56,872 [INFO] scraper: Found 20 items on page 9 for GPU
+2025-09-11 02:13:29,095 [INFO] scraper: GPU scraping complete: 179 inserted, 1 updated
+2025-09-11 02:13:29,095 [INFO] app: GPU scraping completed: {'status': 'GPU scraping complete', 'category': 'GPU', 'inserted': 179, 'updated': 1, 'timestamp': '2025-09-11T02:13:29.095757'}
+2025-09-11 02:14:20,400 [INFO] app: Manual scrape triggered for Motherboard via /scrape-now
+2025-09-11 02:14:20,400 [INFO] app: Starting manual Motherboard scraping
+2025-09-11 02:14:20,400 [INFO] scraper: Scraping only Motherboard category
+2025-09-11 02:14:20,400 [INFO] scraper: Scraping Motherboard from StarTech.com.bd
+2025-09-11 02:14:20,401 [INFO] scraper: Scraping Motherboard from https://www.startech.com.bd/component/motherboard
+2025-09-11 02:14:21,132 [INFO] scraper: Detected 9 pages for Motherboard
+2025-09-11 02:14:21,132 [INFO] scraper: Scraping page 1 for Motherboard: https://www.startech.com.bd/component/motherboard
+2025-09-11 02:14:21,760 [INFO] scraper: Found 20 items on page 1 for Motherboard
+2025-09-11 02:14:53,673 [INFO] scraper: Scraping page 2 for Motherboard: https://www.startech.com.bd/component/motherboard?page=2
+2025-09-11 02:14:54,273 [INFO] scraper: Found 20 items on page 2 for Motherboard
+2025-09-11 02:15:27,780 [INFO] scraper: Scraping page 3 for Motherboard: https://www.startech.com.bd/component/motherboard?page=3
+2025-09-11 02:15:28,557 [INFO] scraper: Found 20 items on page 3 for Motherboard
+2025-09-11 02:16:00,663 [INFO] scraper: Scraping page 4 for Motherboard: https://www.startech.com.bd/component/motherboard?page=4
+2025-09-11 02:16:01,260 [INFO] scraper: Found 20 items on page 4 for Motherboard
+2025-09-11 02:16:32,961 [INFO] scraper: Scraping page 5 for Motherboard: https://www.startech.com.bd/component/motherboard?page=5
+2025-09-11 02:16:33,608 [INFO] scraper: Found 20 items on page 5 for Motherboard
+2025-09-11 02:17:05,252 [INFO] scraper: Scraping page 6 for Motherboard: https://www.startech.com.bd/component/motherboard?page=6
+2025-09-11 02:17:05,835 [INFO] scraper: Found 20 items on page 6 for Motherboard
+2025-09-11 02:17:37,574 [INFO] scraper: Scraping page 7 for Motherboard: https://www.startech.com.bd/component/motherboard?page=7
+2025-09-11 02:17:38,163 [INFO] scraper: Found 20 items on page 7 for Motherboard
+2025-09-11 02:18:11,133 [INFO] scraper: Scraping page 8 for Motherboard: https://www.startech.com.bd/component/motherboard?page=8
+2025-09-11 02:18:11,797 [INFO] scraper: Found 20 items on page 8 for Motherboard
+2025-09-11 02:18:43,797 [INFO] scraper: Scraping page 9 for Motherboard: https://www.startech.com.bd/component/motherboard?page=9
+2025-09-11 02:18:44,414 [INFO] scraper: Found 20 items on page 9 for Motherboard
+2025-09-11 02:19:16,595 [INFO] scraper: Motherboard scraping complete: 180 inserted, 0 updated
+2025-09-11 02:19:16,595 [INFO] app: Motherboard scraping completed: {'status': 'Motherboard scraping complete', 'category': 'Motherboard', 'inserted': 180, 'updated': 0, 'timestamp': '2025-09-11T02:19:16.595008'}
+2025-09-11 02:33:45,022 [INFO] app: Manual scrape triggered for RAM via /scrape-now
+2025-09-11 02:33:45,023 [INFO] app: Starting manual RAM scraping
+2025-09-11 02:33:45,023 [INFO] scraper: Scraping only RAM category
+2025-09-11 02:33:45,023 [INFO] scraper: Scraping RAM from StarTech.com.bd
+2025-09-11 02:33:45,023 [INFO] scraper: Scraping RAM from https://www.startech.com.bd/component/ram
+2025-09-11 02:33:45,787 [INFO] scraper: Detected 9 pages for RAM
+2025-09-11 02:33:45,788 [INFO] scraper: Scraping page 1 for RAM: https://www.startech.com.bd/component/ram
+2025-09-11 02:33:46,358 [INFO] scraper: Found 20 items on page 1 for RAM
+2025-09-11 02:34:16,904 [INFO] scraper: Scraping page 2 for RAM: https://www.startech.com.bd/component/ram?page=2
+2025-09-11 02:34:17,470 [INFO] scraper: Found 20 items on page 2 for RAM
+2025-09-11 02:34:47,687 [INFO] scraper: Scraping page 3 for RAM: https://www.startech.com.bd/component/ram?page=3
+2025-09-11 02:34:48,328 [INFO] scraper: Found 20 items on page 3 for RAM
+2025-09-11 02:35:18,808 [INFO] scraper: Scraping page 4 for RAM: https://www.startech.com.bd/component/ram?page=4
+2025-09-11 02:35:19,464 [INFO] scraper: Found 20 items on page 4 for RAM
+2025-09-11 02:35:49,899 [INFO] scraper: Scraping page 5 for RAM: https://www.startech.com.bd/component/ram?page=5
+2025-09-11 02:35:50,525 [INFO] scraper: Found 20 items on page 5 for RAM
+2025-09-11 02:36:19,314 [INFO] scraper: Scraping page 6 for RAM: https://www.startech.com.bd/component/ram?page=6
+2025-09-11 02:36:19,871 [INFO] scraper: Found 20 items on page 6 for RAM
+2025-09-11 02:36:20,878 [INFO] scraper: Scraping page 7 for RAM: https://www.startech.com.bd/component/ram?page=7
+2025-09-11 02:36:21,428 [INFO] scraper: Found 20 items on page 7 for RAM
+2025-09-11 02:36:22,436 [INFO] scraper: Scraping page 8 for RAM: https://www.startech.com.bd/component/ram?page=8
+2025-09-11 02:36:23,135 [INFO] scraper: Found 20 items on page 8 for RAM
+2025-09-11 02:36:25,656 [INFO] scraper: Scraping page 9 for RAM: https://www.startech.com.bd/component/ram?page=9
+2025-09-11 02:36:26,283 [INFO] scraper: Found 20 items on page 9 for RAM
+2025-09-11 02:36:27,292 [INFO] scraper: RAM scraping complete: 95 inserted, 0 updated
+2025-09-11 02:36:27,292 [INFO] app: RAM scraping completed: {'status': 'RAM scraping complete', 'category': 'RAM', 'inserted': 95, 'updated': 0, 'timestamp': '2025-09-11T02:36:27.292761'}
+2025-09-11 02:36:56,889 [INFO] app: Manual scrape triggered for Storage via /scrape-now
+2025-09-11 02:36:56,889 [INFO] app: Starting manual Storage scraping
+2025-09-11 02:36:56,890 [INFO] scraper: Scraping only Storage category
+2025-09-11 02:36:56,890 [INFO] scraper: Scraping Storage from StarTech.com.bd
+2025-09-11 02:36:56,890 [INFO] scraper: Scraping Storage from https://www.startech.com.bd/ssd
+2025-09-11 02:36:57,478 [INFO] scraper: Detected 9 pages for Storage
+2025-09-11 02:36:57,478 [INFO] scraper: Scraping page 1 for Storage: https://www.startech.com.bd/ssd
+2025-09-11 02:36:58,091 [INFO] scraper: Found 20 items on page 1 for Storage
+2025-09-11 02:37:30,305 [INFO] scraper: Scraping page 2 for Storage: https://www.startech.com.bd/ssd?page=2
+2025-09-11 02:37:31,017 [INFO] scraper: Found 20 items on page 2 for Storage
+2025-09-11 02:38:03,319 [INFO] scraper: Scraping page 3 for Storage: https://www.startech.com.bd/ssd?page=3
+2025-09-11 02:38:04,044 [INFO] scraper: Found 20 items on page 3 for Storage
+2025-09-11 02:38:36,177 [INFO] scraper: Scraping page 4 for Storage: https://www.startech.com.bd/ssd?page=4
+2025-09-11 02:38:36,770 [INFO] scraper: Found 20 items on page 4 for Storage
+2025-09-11 02:39:09,510 [INFO] scraper: Scraping page 5 for Storage: https://www.startech.com.bd/ssd?page=5
+2025-09-11 02:39:10,092 [INFO] scraper: Found 20 items on page 5 for Storage
+2025-09-11 02:39:42,238 [INFO] scraper: Scraping page 6 for Storage: https://www.startech.com.bd/ssd?page=6
+2025-09-11 02:39:42,865 [INFO] scraper: Found 20 items on page 6 for Storage
+2025-09-11 02:40:15,209 [INFO] scraper: Scraping page 7 for Storage: https://www.startech.com.bd/ssd?page=7
+2025-09-11 02:40:15,894 [INFO] scraper: Found 20 items on page 7 for Storage
+2025-09-11 02:40:46,396 [INFO] scraper: Scraping page 8 for Storage: https://www.startech.com.bd/ssd?page=8
+2025-09-11 02:40:47,104 [INFO] scraper: Found 20 items on page 8 for Storage
+2025-09-11 02:41:17,656 [INFO] scraper: Scraping page 9 for Storage: https://www.startech.com.bd/ssd?page=9
+2025-09-11 02:41:18,262 [INFO] scraper: Found 20 items on page 9 for Storage
+2025-09-11 02:41:19,271 [INFO] scraper: Storage scraping complete: 156 inserted, 2 updated
+2025-09-11 02:41:19,271 [INFO] app: Storage scraping completed: {'status': 'Storage scraping complete', 'category': 'Storage', 'inserted': 156, 'updated': 2, 'timestamp': '2025-09-11T02:41:19.271848'}
+2025-09-11 02:42:03,665 [INFO] app: Manual scrape triggered for PSU via /scrape-now
+2025-09-11 02:42:03,665 [INFO] app: Starting manual PSU scraping
+2025-09-11 02:42:03,665 [INFO] scraper: Scraping only PSU category
+2025-09-11 02:42:03,665 [INFO] scraper: Scraping PSU from StarTech.com.bd
+2025-09-11 02:42:03,665 [INFO] scraper: Scraping PSU from https://www.startech.com.bd/component/power-supply
+2025-09-11 02:42:04,380 [INFO] scraper: Detected 9 pages for PSU
+2025-09-11 02:42:04,380 [INFO] scraper: Scraping page 1 for PSU: https://www.startech.com.bd/component/power-supply
+2025-09-11 02:42:04,958 [INFO] scraper: Found 20 items on page 1 for PSU
+2025-09-11 02:42:37,000 [INFO] scraper: Scraping page 2 for PSU: https://www.startech.com.bd/component/power-supply?page=2
+2025-09-11 02:42:37,573 [INFO] scraper: Found 20 items on page 2 for PSU
+2025-09-11 02:43:07,837 [INFO] scraper: Scraping page 3 for PSU: https://www.startech.com.bd/component/power-supply?page=3
+2025-09-11 02:43:08,397 [INFO] scraper: Found 20 items on page 3 for PSU
+2025-09-11 02:43:40,554 [INFO] scraper: Scraping page 4 for PSU: https://www.startech.com.bd/component/power-supply?page=4
+2025-09-11 02:43:41,219 [INFO] scraper: Found 20 items on page 4 for PSU
+2025-09-11 02:44:13,189 [INFO] scraper: Scraping page 5 for PSU: https://www.startech.com.bd/component/power-supply?page=5
+2025-09-11 02:44:13,746 [INFO] scraper: Found 20 items on page 5 for PSU
+2025-09-11 02:44:31,980 [INFO] scraper: Scraping page 6 for PSU: https://www.startech.com.bd/component/power-supply?page=6
+2025-09-11 02:44:32,538 [INFO] scraper: Found 20 items on page 6 for PSU
+2025-09-11 02:44:41,253 [INFO] scraper: Scraping page 7 for PSU: https://www.startech.com.bd/component/power-supply?page=7
+2025-09-11 02:44:41,820 [INFO] scraper: Found 20 items on page 7 for PSU
+2025-09-11 02:44:42,827 [INFO] scraper: Scraping page 8 for PSU: https://www.startech.com.bd/component/power-supply?page=8
+2025-09-11 02:44:43,466 [INFO] scraper: Found 20 items on page 8 for PSU
+2025-09-11 02:44:44,473 [INFO] scraper: Scraping page 9 for PSU: https://www.startech.com.bd/component/power-supply?page=9
+2025-09-11 02:44:45,034 [INFO] scraper: Found 20 items on page 9 for PSU
+2025-09-11 02:44:52,233 [INFO] scraper: PSU scraping complete: 99 inserted, 0 updated
+2025-09-11 02:44:52,233 [INFO] app: PSU scraping completed: {'status': 'PSU scraping complete', 'category': 'PSU', 'inserted': 99, 'updated': 0, 'timestamp': '2025-09-11T02:44:52.233900'}
+2025-09-11 02:45:41,179 [INFO] app: Manual scrape triggered for Case via /scrape-now
+2025-09-11 02:45:41,180 [INFO] app: Starting manual Case scraping
+2025-09-11 02:45:41,180 [INFO] scraper: Scraping only Case category
+2025-09-11 02:45:41,180 [INFO] scraper: Scraping Case from StarTech.com.bd
+2025-09-11 02:45:41,180 [INFO] scraper: Scraping Case from https://www.startech.com.bd/component/casing
+2025-09-11 02:45:42,044 [INFO] scraper: Detected 9 pages for Case
+2025-09-11 02:45:42,044 [INFO] scraper: Scraping page 1 for Case: https://www.startech.com.bd/component/casing
+2025-09-11 02:45:42,662 [INFO] scraper: Found 20 items on page 1 for Case
+2025-09-11 02:46:14,568 [INFO] scraper: Scraping page 2 for Case: https://www.startech.com.bd/component/casing?page=2
+2025-09-11 02:46:15,192 [INFO] scraper: Found 20 items on page 2 for Case
+2025-09-11 02:46:47,229 [INFO] scraper: Scraping page 3 for Case: https://www.startech.com.bd/component/casing?page=3
+2025-09-11 02:46:47,961 [INFO] scraper: Found 20 items on page 3 for Case
+2025-09-11 02:47:17,798 [INFO] scraper: Scraping page 4 for Case: https://www.startech.com.bd/component/casing?page=4
+2025-09-11 02:47:18,438 [INFO] scraper: Found 20 items on page 4 for Case
+2025-09-11 02:47:50,537 [INFO] scraper: Scraping page 5 for Case: https://www.startech.com.bd/component/casing?page=5
+2025-09-11 02:47:51,162 [INFO] scraper: Found 20 items on page 5 for Case
+2025-09-11 02:48:20,395 [INFO] scraper: Scraping page 6 for Case: https://www.startech.com.bd/component/casing?page=6
+2025-09-11 02:48:21,035 [INFO] scraper: Found 20 items on page 6 for Case
+2025-09-11 02:48:51,843 [INFO] scraper: Scraping page 7 for Case: https://www.startech.com.bd/component/casing?page=7
+2025-09-11 02:48:52,466 [INFO] scraper: Found 20 items on page 7 for Case
+2025-09-11 02:49:23,133 [INFO] scraper: Scraping page 8 for Case: https://www.startech.com.bd/component/casing?page=8
+2025-09-11 02:49:23,844 [INFO] scraper: Found 20 items on page 8 for Case
+2025-09-11 02:49:54,920 [INFO] scraper: Scraping page 9 for Case: https://www.startech.com.bd/component/casing?page=9
+2025-09-11 02:49:55,604 [INFO] scraper: Found 20 items on page 9 for Case
+2025-09-11 02:50:27,733 [INFO] scraper: Case scraping complete: 175 inserted, 0 updated
+2025-09-11 02:50:27,734 [INFO] app: Case scraping completed: {'status': 'Case scraping complete', 'category': 'Case', 'inserted': 175, 'updated': 0, 'timestamp': '2025-09-11T02:50:27.734486'}
+2025-09-11 02:54:14,312 [INFO] engine: Building PC for purpose: gaming_budget, budget: 50000
+2025-09-11 02:54:14,314 [ERROR] app: Error in recommend_build: 400: No compatible motherboard found
+2025-09-11 02:54:16,343 [INFO] engine: Building PC for purpose: gaming_mid, budget: 80000
+2025-09-11 02:54:16,345 [ERROR] app: Error in recommend_build: 400: No compatible motherboard found
+2025-09-11 02:54:18,414 [INFO] engine: Building PC for purpose: office, budget: 35000
+2025-09-11 02:54:18,416 [ERROR] app: Error in recommend_build: 400: No compatible motherboard found
+2025-09-11 02:54:20,465 [INFO] engine: Building PC for purpose: content_creation, budget: 120000
+2025-09-11 02:54:20,468 [ERROR] app: Error in recommend_build: 400: No compatible motherboard found

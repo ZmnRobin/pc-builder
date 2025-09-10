@@ -23,13 +23,201 @@ class ComponentScraper:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         }
         
+    def extract_specs_from_short_description(self, soup: BeautifulSoup, category: str) -> Dict[str, any]:
+        """Extract specifications from short-description section"""
+        specs = {}
+        
+        try:
+            # Look for short-description section
+            short_desc = soup.select_one('.short-description')
+            if not short_desc:
+                return specs
+                
+            # Find all list items in short-description
+            list_items = short_desc.find_all('li')
+            
+            for item in list_items:
+                text = item.get_text(strip=True).lower()
+                
+                # CPU specifications
+                if category == "CPU":
+                    if 'speed:' in text or 'frequency:' in text:
+                        # Extract speed info like "3.5GHz up to 4.4GHz"
+                        speed_match = re.search(r'(\d+\.?\d*)\s*ghz', text)
+                        if speed_match:
+                            specs['base_clock'] = speed_match.group(1) + 'GHz'
+                    
+                    if 'cores' in text and 'threads' in text:
+                        # Extract cores and threads like "Cores-6 & Threads-12"
+                        cores_match = re.search(r'cores[:\s-]*(\d+)', text)
+                        threads_match = re.search(r'threads[:\s-]*(\d+)', text)
+                        if cores_match:
+                            specs['cores'] = int(cores_match.group(1))
+                        if threads_match:
+                            specs['threads'] = int(threads_match.group(1))
+                    
+                    if 'ddr' in text:
+                        # Extract DDR type like "DDR4 Up to 3200MHz"
+                        ddr_match = re.search(r'ddr(\d+)', text)
+                        if ddr_match:
+                            specs['memory_type'] = f"DDR{ddr_match.group(1)}"
+                    
+                    if 'cache:' in text:
+                        # Extract cache info
+                        cache_match = re.search(r'l3[:\s-]*(\d+)mb', text)
+                        if cache_match:
+                            specs['cache_l3'] = int(cache_match.group(1))
+                
+                # Motherboard specifications
+                elif category == "Motherboard":
+                    if 'amd' in text and ('ryzen' in text or 'am4' in text):
+                        specs['socket'] = 'AM4'
+                        if 'a520' in text:
+                            specs['chipset'] = 'A520'
+                        elif 'b450' in text:
+                            specs['chipset'] = 'B450'
+                        elif 'b550' in text:
+                            specs['chipset'] = 'B550'
+                        elif 'x570' in text:
+                            specs['chipset'] = 'X570'
+                    
+                    if 'intel' in text and ('lga' in text or 'socket' in text):
+                        if 'lga1700' in text:
+                            specs['socket'] = 'LGA1700'
+                        elif 'lga1200' in text:
+                            specs['socket'] = 'LGA1200'
+                        elif 'h610' in text:
+                            specs['chipset'] = 'H610'
+                        elif 'b660' in text:
+                            specs['chipset'] = 'B660'
+                        elif 'z690' in text:
+                            specs['chipset'] = 'Z690'
+                    
+                    if 'ram' in text and 'mhz' in text:
+                        # Extract RAM speed like "Supports up to 4600(OC) MHz RAM"
+                        ram_match = re.search(r'(\d+)(?:\(oc\))?\s*mhz', text)
+                        if ram_match:
+                            specs['max_ram_speed'] = int(ram_match.group(1))
+                    
+                    if 'micro-atx' in text or 'matx' in text:
+                        specs['form_factor'] = 'Micro-ATX'
+                    elif 'mini-itx' in text:
+                        specs['form_factor'] = 'Mini-ITX'
+                    elif 'atx' in text:
+                        specs['form_factor'] = 'ATX'
+                
+                # RAM specifications
+                elif category == "RAM":
+                    if 'capacity:' in text or 'memory capacity:' in text:
+                        # Extract capacity like "Memory Capacity: 16GB"
+                        capacity_match = re.search(r'(\d+)\s*gb', text)
+                        if capacity_match:
+                            specs['capacity'] = int(capacity_match.group(1))
+                    
+                    if 'type:' in text or 'memory type:' in text:
+                        # Extract type like "Memory Type: DDR4"
+                        type_match = re.search(r'ddr(\d+)', text)
+                        if type_match:
+                            specs['type'] = f"DDR{type_match.group(1)}"
+                    
+                    if 'frequency:' in text or 'mhz' in text:
+                        # Extract frequency like "Memory Frequency: 3600MHz"
+                        freq_match = re.search(r'(\d+)\s*mhz', text)
+                        if freq_match:
+                            specs['speed'] = int(freq_match.group(1))
+                    
+                    if 'latency:' in text or 'cl' in text:
+                        # Extract latency like "Latency: CL18"
+                        latency_match = re.search(r'cl(\d+)', text)
+                        if latency_match:
+                            specs['latency'] = f"CL{latency_match.group(1)}"
+                
+                # GPU specifications
+                elif category == "GPU":
+                    if 'memory:' in text or 'video memory:' in text:
+                        # Extract memory like "Video Memory: 8GB GDDR6"
+                        memory_match = re.search(r'(\d+)\s*gb', text)
+                        if memory_match:
+                            specs['memory_gb'] = int(memory_match.group(1))
+                    
+                    if 'core clock:' in text:
+                        # Extract core clock like "Core Clock: 2587 MHz"
+                        clock_match = re.search(r'(\d+)\s*mhz', text)
+                        if clock_match:
+                            specs['core_clock'] = int(clock_match.group(1))
+                    
+                    if 'cuda cores:' in text:
+                        # Extract CUDA cores like "CUDA Cores: 2560"
+                        cuda_match = re.search(r'(\d+)', text)
+                        if cuda_match:
+                            specs['cuda_cores'] = int(cuda_match.group(1))
+                
+                # Storage specifications
+                elif category == "Storage":
+                    if 'capacity:' in text:
+                        # Extract capacity like "Capacity: 512GB"
+                        capacity_match = re.search(r'(\d+)\s*gb', text)
+                        if capacity_match:
+                            specs['capacity'] = int(capacity_match.group(1))
+                    
+                    if 'interface:' in text:
+                        # Extract interface like "Interface: PCI-Express 4.0 x4"
+                        if 'pci-express' in text or 'nvme' in text:
+                            specs['interface'] = 'PCIe NVMe'
+                        elif 'sata' in text:
+                            specs['interface'] = 'SATA'
+                    
+                    if 'form factor:' in text:
+                        # Extract form factor like "Form Factor: M.2 2280"
+                        if 'm.2' in text:
+                            specs['form_factor'] = 'M.2'
+                        elif '2.5' in text:
+                            specs['form_factor'] = '2.5"'
+                
+                # PSU specifications
+                elif category == "PSU":
+                    if 'wattage' in text or 'w' in text:
+                        # Extract wattage like "550W"
+                        wattage_match = re.search(r'(\d+)\s*w', text)
+                        if wattage_match:
+                            specs['wattage'] = int(wattage_match.group(1))
+                    
+                    if '80 plus' in text:
+                        # Extract efficiency rating like "80 PLUS White Certified"
+                        efficiency_match = re.search(r'80\s*plus\s+(\w+)', text)
+                        if efficiency_match:
+                            specs['efficiency'] = efficiency_match.group(1).title()
+                
+                # Case specifications
+                elif category == "Case":
+                    if 'motherboard support:' in text:
+                        # Extract motherboard support like "Motherboard Support: M-ATX, Mini-ITX"
+                        if 'atx' in text:
+                            specs['motherboard_support'] = 'ATX'
+                        elif 'micro-atx' in text or 'm-atx' in text:
+                            specs['motherboard_support'] = 'Micro-ATX'
+                        elif 'mini-itx' in text:
+                            specs['motherboard_support'] = 'Mini-ITX'
+                            
+        except Exception as e:
+            logger.debug(f"Error extracting specs from short description: {e}")
+            
+        return specs
+
     def extract_specs(self, component_name: str, category: str, soup: BeautifulSoup) -> Dict[str, any]:
         """Extract specifications from component page"""
         specs = {}
         
         try:
-            # Look for specification tables or lists
-            spec_tables = soup.find_all(['table', 'dl', 'ul'], class_=re.compile(r'spec|detail|feature'))
+            # First try to extract from short-description section
+            specs = self.extract_specs_from_short_description(soup, category)
+            
+            # If no specs found, try to extract from component name
+            if not specs:
+                specs = self.extract_specs_from_name(component_name, category)
+            
+            # Also try to extract from detailed specification tables if available
+            spec_tables = soup.find_all(['table', 'dl'], class_=re.compile(r'spec|detail|feature'))
             
             for table in spec_tables:
                 rows = table.find_all(['tr', 'li'])
@@ -39,40 +227,22 @@ class ComponentScraper:
                         key = cells[0].get_text(strip=True).lower()
                         value = cells[1].get_text(strip=True)
                         
-                        # Map common spec keys
-                        if 'socket' in key or 'cpu socket' in key:
+                        # Map common spec keys (fallback)
+                        if 'socket' in key and 'socket' not in specs:
                             specs['socket'] = value
-                        elif 'chipset' in key:
+                        elif 'chipset' in key and 'chipset' not in specs:
                             specs['chipset'] = value
-                        elif 'memory' in key and 'type' in key:
+                        elif 'memory' in key and 'type' in key and 'memory_type' not in specs:
                             specs['memory_type'] = value
-                        elif 'capacity' in key or 'size' in key:
+                        elif 'capacity' in key and 'capacity' not in specs:
                             specs['capacity'] = value
-                        elif 'speed' in key or 'frequency' in key:
+                        elif 'speed' in key and 'speed' not in specs:
                             specs['speed'] = value
-                        elif 'wattage' in key or 'power' in key:
+                        elif 'wattage' in key and 'wattage' not in specs:
                             specs['wattage'] = int(re.findall(r'\d+', value)[0]) if re.findall(r'\d+', value) else None
-                        elif 'cores' in key:
-                            specs['cores'] = int(re.findall(r'\d+', value)[0]) if re.findall(r'\d+', value) else None
-                        elif 'threads' in key:
-                            specs['threads'] = int(re.findall(r'\d+', value)[0]) if re.findall(r'\d+', value) else None
-                        elif 'base clock' in key or 'frequency' in key:
-                            specs['base_clock'] = value
-                        elif 'boost clock' in key:
-                            specs['boost_clock'] = value
-                        elif 'memory' in key and 'gb' in value.lower():
-                            specs['memory_gb'] = int(re.findall(r'\d+', value)[0]) if re.findall(r'\d+', value) else None
-                        elif 'interface' in key:
-                            specs['interface'] = value
-                        elif 'form factor' in key:
-                            specs['form_factor'] = value
                             
         except Exception as e:
             logger.debug(f"Error extracting specs for {component_name}: {e}")
-            
-        # Extract specs from component name if not found in page
-        if not specs:
-            specs = self.extract_specs_from_name(component_name, category)
             
         return specs
     
@@ -264,9 +434,11 @@ class ComponentScraper:
                                 item.select_one('h3')
                             )
                             
+                            # Extract price from correct location - price-new is the actual price
                             price_elem = (
-                                item.select_one('.marks .price') or
-                                item.select_one('.marks') or
+                                item.select_one('.p-item-price .price-new') or
+                                item.select_one('.price-new') or
+                                item.select_one('.p-item-price span') or
                                 item.select_one('.p-item-price') or
                                 item.select_one('.price')
                             )
@@ -283,14 +455,19 @@ class ComponentScraper:
                             if 'up coming' in price_text.lower() or 'out of stock' in price_text.lower():
                                 continue
                                 
-                            # Parse price
-                            cleaned_text = price_text.replace('৳', '').replace('Tk', '').replace(',', '')
-                            prices = re.findall(r'\d+', cleaned_text)
-                            if not prices:
+                            # Parse price - handle different formats
+                            # Remove currency symbols and commas
+                            cleaned_text = price_text.replace('৳', '').replace('Tk', '').replace(',', '').strip()
+                            
+                            # Extract the first number found (should be the price)
+                            price_match = re.search(r'(\d+)', cleaned_text)
+                            if not price_match:
+                                logger.debug(f"Could not parse price '{price_text}' for {name}")
                                 continue
                                 
-                            price = int(prices[0])
+                            price = int(price_match.group(1))
                             if price == 0:
+                                logger.debug(f"Invalid price for {name}: {price_text}")
                                 continue
                                 
                             # Build URL
@@ -354,6 +531,32 @@ class ComponentScraper:
             
         return scraped_count, updated_count
     
+    async def scrape_category_only(self, category: str) -> Dict[str, any]:
+        """Scrape only a specific category"""
+        logger.info(f"Scraping only {category} category")
+        
+        total_scraped = 0
+        total_updated = 0
+        
+        for retailer, config in RETAILERS.items():
+            if category in config['categories']:
+                logger.info(f"Scraping {category} from {config['name']}")
+                base_url = config['base_url'] + config['categories'][category]
+                scraped, updated = await self.scrape_category(retailer, category, base_url)
+                total_scraped += scraped
+                total_updated += updated
+                break  # Only scrape from first retailer for now
+        
+        logger.info(f"{category} scraping complete: {total_scraped} inserted, {total_updated} updated")
+        
+        return {
+            "status": f"{category} scraping complete",
+            "category": category,
+            "inserted": total_scraped,
+            "updated": total_updated,
+            "timestamp": datetime.now().isoformat()
+        }
+
     async def scrape_all_components(self) -> Dict[str, any]:
         """Scrape all components from all retailers"""
         total_scraped = 0
